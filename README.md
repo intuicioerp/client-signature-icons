@@ -1,9 +1,14 @@
 # client-signature-icons
 
-Public images used in clients' email signatures, one folder per client.
+Public images and generated email signatures for clients, one folder per client.
 
 ```
-<client>/<image>.png
+<client>/images/    PNG assets (logos, photo, social icons)
+<client>/dist/      generated signatures, one HTML file per person
 ```
 
-Images are served from `https://raw.githubusercontent.com/intuicioerp/client-signature-icons/main/<client>/<image>.png`.
+| Client | Signatures | Install guide |
+|---|---|---|
+| A2Z Move Management | https://intuicioerp.github.io/client-signature-icons/a2z/dist/index.html | [a2z/INSTALL-OUTLOOK.md](a2z/INSTALL-OUTLOOK.md) |
+
+Images are served from `https://intuicioerp.github.io/client-signature-icons/<client>/images/<file>.png`.

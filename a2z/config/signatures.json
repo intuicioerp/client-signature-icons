@@ -1,0 +1,101 @@
+{
+  "brand": {
+    "company": "A2Z Move Management",
+    "accent": "#C41FC1",
+    "text_dark": "#1F1F1F",
+    "text_body": "#4A4A4A",
+    "text_muted": "#6B6B6B",
+    "divider": "#E2D3E0",
+    "website_label": "www.a2zmovemgmt.com",
+    "website_url": "https://www.a2zmovemgmt.com",
+    "instagram_url": "https://www.instagram.com/a2zmovemanagement_/",
+    "tagline": "Worldwide Moving Solutions · connecting points",
+    "logo": {"file": "a2z-logo.png", "width": 96, "height": 114, "alt": "A2Z Move Management"},
+    "powered_by": {"file": "intucio.png", "width": 84, "height": 15, "alt": "intuiCIO", "url": "https://intuicioerp.com"}
+  },
+  "icons": {
+    "instagram": {"file": "icon-instagram.png", "width": 26, "height": 26, "alt": "Instagram"},
+    "linkedin": {"file": "icon-linkedin.png", "width": 26, "height": 26, "alt": "LinkedIn"}
+  },
+  "logo_rows": {
+    "with_photo": [
+      {"file": "iam-trusted.png", "width": 29, "height": 28, "alt": "IAM Trusted"},
+      {"file": "iamx-validated.png", "width": 64, "height": 22, "alt": "IAMX Validated"},
+      {"file": "ima.png", "width": 30, "height": 22, "alt": "IMA - International Mobility Alliance"},
+      {"file": "fedemac.png", "width": 63, "height": 14, "alt": "FEDEMAC European Movers"},
+      {"file": "gem-network.png", "width": 54, "height": 18, "alt": "GEM Network"},
+      {"file": "nvocc-california.png", "width": 28, "height": 28, "alt": "NVOCC Agent - State of California"},
+      {"file": "reloadvisor.png", "width": 67, "height": 10, "alt": "ReloAdvisor"},
+      {"file": "fem.png", "width": 45, "height": 18, "alt": "Forum for Expatriate Management"},
+      {"file": "movers-poe.png", "width": 47, "height": 18, "alt": "Instant Rate Movers P.O.E"}
+    ],
+    "default": [
+      {"file": "iamx-validated.png", "width": 70, "height": 24, "alt": "IAMX Validated"},
+      {"file": "ima.png", "width": 33, "height": 24, "alt": "IMA - International Mobility Alliance"},
+      {"file": "fedemac.png", "width": 68, "height": 15, "alt": "FEDEMAC European Movers"},
+      {"file": "gem-network.png", "width": 61, "height": 20, "alt": "GEM Network"},
+      {"file": "nvocc-california.png", "width": 30, "height": 30, "alt": "NVOCC Agent - State of California"},
+      {"file": "reloadvisor.png", "width": 74, "height": 11, "alt": "ReloAdvisor"},
+      {"file": "fem.png", "width": 50, "height": 20, "alt": "Forum for Expatriate Management"},
+      {"file": "movers-poe.png", "width": 53, "height": 20, "alt": "Instant Rate Movers P.O.E"}
+    ]
+  },
+  "legal": {
+    "confidentiality": "This email message, including any attachments, is for the sole use of the intended recipient(s) and may contain confidential and privileged information. Any unauthorized review, use, disclosure, or distribution is prohibited. If you are not the intended recipient, please contact the sender by reply email and destroy all copies of the original message. If you are not the intended recipient, you are notified that disclosing, copying, distributing, or taking any action in reliance on the contents of this information is strictly prohibited.",
+    "market_title": "!! Disclaimer: Market Adjustment !!",
+    "market_text": "Due to global geopolitical and energy volatility, transport rates are fluctuating unpredictably. All quotes are based on current conditions and remain subject to change—even after issuance—due to shifts in operational costs (including fuel and freight). Any adjustments will be communicated promptly.",
+    "links": [
+      {"label": "View Our Policy", "url": "https://travel.state.gov/en/international-travel/planning/guidance/laws.html"},
+      {"label": "Restricted items for import", "url": "https://www.dropbox.com/scl/fi/6vuktyl8744cohbszt6cx/USA-Import-FIDI-Customs-Guide.pdf?rlkey=1e5gn2cs104aixc7mtmxfai55&st=7rjgdzsc&e=1&dl=0"}
+    ]
+  },
+  "people": [
+    {
+      "slug": "marly-springer",
+      "name": "Marly Springer",
+      "title": "CEO",
+      "email": "marlyspringer@a2zmovemgmt.com",
+      "phone_label": "WhatsApp/Cell:",
+      "phone_display": "+1 305-986-6650",
+      "phone_tel": "+13059866650",
+      "linkedin_url": "https://www.linkedin.com/in/marlyspringer",
+      "photo": {"file": "marly-photo.png", "width": 108, "height": 108, "alt": "Marly Springer"},
+      "logo_row": "with_photo"
+    },
+    {
+      "slug": "eduardo-texeira",
+      "name": "Eduardo Texeira",
+      "title": "Senior Move Services Consultant",
+      "email": "imports@a2zmovemgmt.com",
+      "logo_row": "default"
+    },
+    {
+      "slug": "ana-torres",
+      "name": "Ana Torres",
+      "title": "Senior Move Services Consultant",
+      "email": "exports@a2zmovemgmt.com",
+      "logo_row": "default"
+    },
+    {
+      "slug": "vania-masanovic",
+      "name": "Vania Masanovic",
+      "title": "Senior Move Services Consultant",
+      "email": "vaniavasanovic@a2zmovemgmt.com",
+      "logo_row": "default"
+    },
+    {
+      "slug": "richard-riddle",
+      "name": "Richard Riddle",
+      "title": "Vice President",
+      "email": "info@a2zmovemgmt.com",
+      "logo_row": "default"
+    },
+    {
+      "slug": "julieta-vangeli",
+      "name": "Julieta Vangeli",
+      "title": "Regional Partner Europe",
+      "email": "julietavangeli@a2zmovemgmt.com",
+      "logo_row": "default"
+    }
+  ]
+}
