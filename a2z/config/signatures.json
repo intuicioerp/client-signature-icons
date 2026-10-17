@@ -30,7 +30,7 @@
       {"file": "movers-poe.png", "width": 47, "height": 18, "alt": "Instant Rate Movers P.O.E"}
     ],
     "default": [
-      {"file": "iamx-validated.png", "width": 70, "height": 24, "alt": "IAMX Validated"},
+      {"file": "iam.png", "width": 48, "height": 24, "alt": "IAM - International Association of Movers"},
       {"file": "ima.png", "width": 33, "height": 24, "alt": "IMA - International Mobility Alliance"},
       {"file": "fedemac.png", "width": 68, "height": 15, "alt": "FEDEMAC European Movers"},
       {"file": "gem-network.png", "width": 61, "height": 20, "alt": "GEM Network"},

@@ -3,7 +3,7 @@
 Outlook-compatible HTML email signatures for six team members, generated from one data file.
 
 ```
-images/                  14 PNG assets at 2x resolution (logos, photo, social icons)
+images/                  15 PNG assets at 2x resolution (logos, photo, social icons)
 config/signatures.json   brand colors, legal text, links and per-person data
 build.py                 generator (Python 3.8+, standard library only)
 dist/                    generated output — one HTML file per person + index.html
