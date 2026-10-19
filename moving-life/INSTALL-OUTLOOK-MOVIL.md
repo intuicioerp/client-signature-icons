@@ -1,10 +1,20 @@
 # Cómo poner tu firma de Moving Life en Outlook del móvil
 
-Este texto es también el correo que se envía al equipo (asunto: *Cómo poner tu firma de Moving Life en Outlook del móvil*).
+El correo que se envía al equipo está en [EMAIL-MOVIL.html](EMAIL-MOVIL.html). Galería de firmas móviles: `https://intuicioerp.github.io/client-signature-icons/moving-life/dist/movil/index.html`.
 
-Outlook para iPhone y Android solo acepta firmas sencillas. El logo, la foto y los sellos de la firma completa no se ven o salen descolocados. Por eso en el móvil recomendamos una firma de solo texto. Quien la reciba la verá bien en cualquier dispositivo.
+## Firma móvil (recomendada)
 
-## 1. Copia tu firma de texto
+Mismo diseño que la del ordenador, pero con la parte de arriba (logo, foto, nombre, cargo, sellos) en **una sola imagen** (`images/cabecera-<slug>.png`) y los datos con sus enlaces debajo, en texto. Se genera con `python build_mobile.py --base-url https://intuicioerp.github.io/client-signature-icons/moving-life/` a partir de `src/*.htm`.
+
+1. En el móvil, abrir `https://intuicioerp.github.io/client-signature-icons/moving-life/dist/movil/<slug>.html`.
+2. Mantener pulsado → **Seleccionar todo** → **Copiar**.
+3. Outlook → foto o inicial → **engranaje** → **Firma** (iPhone: **Firma por cuenta** si hay varias) → borrar → **Pegar** → guardar (✓ en Android).
+4. Enviarse un correo de prueba y tocar los enlaces.
+5. Si la imagen no aparece: descargar `images/cabecera-<slug>.png` en el móvil y en el editor de firma usar el icono de **imagen** → galería, dejando el texto debajo.
+
+## Última opción: firma de solo texto
+
+Si nada de lo anterior funciona en un teléfono concreto:
 
 ```
 Arelys Montilla
