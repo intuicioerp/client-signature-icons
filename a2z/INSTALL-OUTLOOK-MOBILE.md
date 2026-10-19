@@ -1,10 +1,20 @@
 # How to add your A2Z signature to Outlook on your phone
 
-This text is also the email sent to the team (subject: *How to add your A2Z signature to Outlook on your phone*).
+The email sent to the team is [EMAIL-MOBILE.html](EMAIL-MOBILE.html). Gallery of mobile signatures: `https://intuicioerp.github.io/client-signature-icons/a2z/dist/mobile/index.html`.
 
-Outlook for iPhone and Android only supports simple signatures. The logo, photo and partner badges from the full signature don't show, or come out broken. On your phone, please use a text-only signature. It looks fine to every recipient on any device.
+## Mobile signature (recommended)
 
-## 1. Copy your text signature
+Same design as the desktop one, but the top part (photo, name, title, logo, badges) is **one image** (`images/header-<slug>.png`) and the details and links are text underneath. Generated with `python build_mobile.py --base-url https://intuicioerp.github.io/client-signature-icons/a2z/` from `config/signatures.json`.
+
+1. On the phone, open `https://intuicioerp.github.io/client-signature-icons/a2z/dist/mobile/<slug>.html`.
+2. Press and hold → **Select all** → **Copy**.
+3. Outlook → picture or initial → **gear icon** → **Signature** (iPhone: **Per Account Signature** if several accounts) → delete → **Paste** → save (✓ on Android).
+4. Send yourself a test email and tap the links.
+5. If the image does not show: save `images/header-<slug>.png` on the phone and use the **image** icon in the signature editor → photo library, keeping the text underneath.
+
+## Last resort: text-only signature
+
+If nothing above works on a given phone:
 
 ```
 Marly Springer

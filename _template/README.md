@@ -12,7 +12,7 @@ Pasos para preparar las firmas de un cliente nuevo. Copia como punto de partida 
    `python build.py --base-url https://intuicioerp.github.io/client-signature-icons/<cliente>/images/`. No editar `dist/` a mano.
 3. Escribir las dos guías en el idioma del cliente:
    - `INSTALL-OUTLOOK(.md)`: ordenador y web, firma completa copiada desde el enlace.
-   - `INSTALL-OUTLOOK-MOBILE` / `-MOVIL(.md)`: móvil. Lo recomendado es una **firma móvil**: el mismo diseño con la cabecera en una sola imagen y los enlaces en texto debajo. El ejemplo está en `moving-life/build_mobile.py`, con el correo en `moving-life/EMAIL-MOVIL.html`. La firma de solo texto queda como última opción.
+   - `INSTALL-OUTLOOK-MOBILE` / `-MOVIL(.md)`: móvil. Lo recomendado es una **firma móvil**: el mismo diseño con la cabecera en una sola imagen y los enlaces en texto debajo. Hay ejemplos en `moving-life/build_mobile.py` (con datos en `src/`, correo en español latino `EMAIL-MOVIL.html`) y en `a2z/build_mobile.py` (con datos en `config/signatures.json`, correo en inglés `EMAIL-MOBILE.html`). La firma de solo texto queda como última opción.
 4. Copiar la firma HTML de cada usuario también a su ficha en Odoo (Ajustes → Usuarios → Preferencias → Firma).
 5. Añadir el cliente a la tabla de `README.md` de la raíz.
 6. Enviar el correo de entrega (plantillas `EMAIL-ENTREGA.es.md` / `EMAIL-DELIVERY.en.md`). **Siempre incluye la parte del móvil**: Outlook para iPhone/Android no muestra la firma HTML completa.
