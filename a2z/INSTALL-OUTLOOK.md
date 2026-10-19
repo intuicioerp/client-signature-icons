@@ -36,3 +36,7 @@ The page shows only your signature. Then:
 - If images appear as empty boxes, click **"Download pictures"** / **"Show blocked content"** once; recipients
   who have external images blocked will see the same until they allow them — that is normal for all signatures.
 - Do not resize or edit the signature inside Outlook; ask for a new version instead.
+
+## Outlook on your phone (iPhone / Android)
+
+The phone app does not render the full signature: use the text-only version, see [INSTALL-OUTLOOK-MOBILE.md](INSTALL-OUTLOOK-MOBILE.md).

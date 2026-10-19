@@ -35,3 +35,7 @@ La página muestra solo tu firma. Luego:
 - Envíate un correo de prueba a ti mismo y a una cuenta de Gmail para comprobar que las imágenes y los enlaces funcionan.
 - Si ves cuadros vacíos en lugar de imágenes, pulsa **"Descargar imágenes"** / **"Mostrar contenido bloqueado"**. Quien reciba tu correo verá lo mismo hasta que permita las imágenes externas; es normal en cualquier firma.
 - No cambies el tamaño ni edites la firma dentro de Outlook; pide una versión nueva.
+
+## Outlook en el móvil (iPhone / Android)
+
+El móvil no muestra bien la firma completa: usa la versión de solo texto, ver [INSTALL-OUTLOOK-MOVIL.md](INSTALL-OUTLOOK-MOVIL.md).
