@@ -59,7 +59,7 @@
       "phone_display": "+1 305-986-6650",
       "phone_tel": "+13059866650",
       "linkedin_url": "https://www.linkedin.com/in/marlyspringer",
-      "photo": {"file": "marly-photo.png", "width": 108, "height": 108, "alt": "Marly Springer"},
+      "logo_position": "left",
       "logo_row": "with_photo"
     },
     {

@@ -88,14 +88,18 @@ class Renderer:
 
     def header_row(self, p: dict) -> str:
         b = self.brand
+        logo_left = p.get("logo_position") == "left"
         cells = []
         if p.get("photo"):
             cells.append(f'<td width="{p["photo"]["width"]}" valign="middle" style="padding:0 16px 0 0;">{self.img(p["photo"])}</td>')
+        elif logo_left:
+            cells.append(f'<td width="{b["logo"]["width"]}" valign="middle" style="padding:0 16px 0 0;">{self.img(b["logo"])}</td>')
         cells.append(
             f'<td width="4" bgcolor="{b["accent"]}" style="width:4px;background-color:{b["accent"]};font-size:0;line-height:0;">&nbsp;</td>'
         )
         cells.append(f'<td valign="middle" style="padding:0 16px;">{self.info_cell(p)}</td>')
-        cells.append(f'<td width="{b["logo"]["width"]}" valign="middle" align="right" style="padding:0;">{self.img(b["logo"])}</td>')
+        if not logo_left:
+            cells.append(f'<td width="{b["logo"]["width"]}" valign="middle" align="right" style="padding:0;">{self.img(b["logo"])}</td>')
         return (
             '<tr><td style="padding:0 0 14px 0;"><table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation"><tr>'
             + "".join(cells)

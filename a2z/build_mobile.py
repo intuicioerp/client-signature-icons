@@ -54,11 +54,13 @@ def header(cfg, p, out):
     probe = ImageDraw.Draw(Image.new("RGB", (1, 1)))
     logo = load(b["logo"]["file"], 64)
     photo = load(p["photo"]["file"], 76) if p.get("photo") else None
+    logo_left = p.get("logo_position") == "left"
+    lead = photo or (logo if logo_left else None)       # image left of the accent bar
 
     x = 0
-    if photo:
-        x = photo.width + 8 * S + 3 * S + 10 * S        # photo, gap, accent bar, gap
-    text_w = w - x - logo.width - 8 * S
+    if lead:
+        x = lead.width + 8 * S + 3 * S + 10 * S         # image, gap, accent bar, gap
+    text_w = w - x - (0 if logo_left else logo.width + 8 * S)
     name_f = fit(probe, p["name"], "arialbi.ttf", 20, text_w)
     title_f = fit(probe, p["title"], "arial.ttf", 13, text_w)
     company_f = fit(probe, b["company"], "arialbd.ttf", 13, text_w)
@@ -79,15 +81,16 @@ def header(cfg, p, out):
 
     canvas = Image.new("RGB", (w, h), "#FFFFFF")
     draw = ImageDraw.Draw(canvas)
-    if photo:
-        canvas.paste(photo, (0, (top_h - photo.height) // 2), photo)
-        bar_x = photo.width + 8 * S
+    if lead:
+        canvas.paste(lead, (0, (top_h - lead.height) // 2), lead)
+        bar_x = lead.width + 8 * S
         draw.rectangle([bar_x, 4 * S, bar_x + 3 * S - 1, top_h - 4 * S], fill=b["accent"])
     y = (top_h - block_h) // 2
     for (text, f, color), th, gap in zip(lines, heights, gaps + [0]):
         draw.text((x, y), text, font=f, fill=color)
         y += th + gap
-    canvas.paste(logo, (w - logo.width, (top_h - logo.height) // 2), logo)
+    if not logo_left:
+        canvas.paste(logo, (w - logo.width, (top_h - logo.height) // 2), logo)
 
     tw = draw.textlength(b["tagline"], font=tag_f)
     draw.text(((w - tw) / 2, top_h + 8 * S), b["tagline"], font=tag_f, fill=b["accent"])
