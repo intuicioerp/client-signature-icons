@@ -1,6 +1,6 @@
 # A2Z Move Management — Email signatures
 
-Outlook-compatible HTML email signatures for six team members, generated from one data file.
+Outlook-compatible HTML email signatures for five team members, generated from one data file.
 
 ```
 images/                  15 PNG assets at 2x resolution (logos, photo, social icons)
