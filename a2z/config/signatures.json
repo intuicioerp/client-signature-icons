@@ -67,6 +67,7 @@
       "name": "Ana Torres",
       "title": "Senior Move Services Consultant",
       "email": "exports@a2zmovemgmt.com",
+      "logo_position": "left",
       "logo_row": "default"
     },
     {
@@ -74,6 +75,7 @@
       "name": "Vania Masanovic",
       "title": "Senior Move Services Consultant",
       "email": "vaniamasanovic@a2zmovemgmt.com",
+      "logo_position": "left",
       "logo_row": "default"
     },
     {
@@ -81,6 +83,7 @@
       "name": "Richard Riddle",
       "title": "Vice President",
       "email": "info@a2zmovemgmt.com",
+      "logo_position": "left",
       "logo_row": "default"
     },
     {
@@ -88,6 +91,7 @@
       "name": "Julieta Vangeli",
       "title": "Regional Partner Europe",
       "email": "julietavangeli@a2zmovemgmt.com",
+      "logo_position": "left",
       "logo_row": "default"
     }
   ]
