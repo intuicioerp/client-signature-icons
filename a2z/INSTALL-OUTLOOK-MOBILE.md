@@ -1,6 +1,6 @@
 # How to add your A2Z signature to Outlook on your phone
 
-The email sent to the team is [EMAIL-MOBILE.html](EMAIL-MOBILE.html). Gallery of mobile signatures: `https://intuicioerp.github.io/client-signature-icons/a2z/dist/mobile/index.html`.
+The latest email sent to the team (desktop and phone links) is [EMAIL-DELIVERY.html](EMAIL-DELIVERY.html); the earlier phone-only email is [EMAIL-MOBILE.html](EMAIL-MOBILE.html). Gallery of mobile signatures: `https://intuicioerp.github.io/client-signature-icons/a2z/dist/mobile/index.html`.
 
 ## Mobile signature (recommended)
 
@@ -28,13 +28,6 @@ www.a2zmovemgmt.com
 Richard Riddle
 Vice President | A2Z Move Management
 info@a2zmovemgmt.com
-www.a2zmovemgmt.com
-```
-
-```
-Eduardo Texeira
-Senior Move Services Consultant | A2Z Move Management
-imports@a2zmovemgmt.com
 www.a2zmovemgmt.com
 ```
 
