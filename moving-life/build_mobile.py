@@ -30,11 +30,11 @@ PAGE = ('<!DOCTYPE html>\n<html lang="es">\n<head>\n<meta charset="utf-8">\n'
 
 def person(src):
     text = src.read_text(encoding="utf-8")
-    name = re.search(r'font-size:18px;[^>]*>([^<]+)</div>', text).group(1)
-    title = re.search(r'font-size:13px;[^>]*>([^<]+)</div>', text).group(1)
+    name = re.search(r'font-size:(?:18|20)px;[^>]*>([^<]+)</div>', text).group(1)
+    title = re.search(r'font-size:13px;[^>]*>([^<]+)</div>', text)  # Blanca has no title
     email = re.search(r'mailto:([^"]+)"', text).group(1)
     mobile = re.search(r'>Mobile</td>\s*<td[^>]*>([^<]+)</td>', text).group(1).strip()
-    return {"slug": src.stem, "name": html.unescape(name), "title": html.unescape(title), "email": email, "mobile": mobile}
+    return {"slug": src.stem, "name": html.unescape(name), "title": html.unescape(title.group(1)) if title else "", "email": email, "mobile": mobile}
 
 
 def fit(draw, text, font_file, size, max_w):
@@ -48,12 +48,14 @@ def fit(draw, text, font_file, size, max_w):
 def header(p, out):
     img_dir = ROOT / "images"
     logo = Image.open(img_dir / "logo.png")
-    photo = Image.open(img_dir / f"foto-{p['slug']}.png")
+    photo_file = img_dir / f"foto-{p['slug']}.png"
+    photo = Image.open(photo_file) if photo_file.exists() else None   # some people have no photo
     seals = Image.open(img_dir / "sellos.png")
     w = W * S
     logo_w = 170 * S
     logo = logo.resize((logo_w, round(logo.height * logo_w / logo.width)), Image.LANCZOS)
-    photo = photo.resize((76 * S, 76 * S), Image.LANCZOS)
+    if photo:
+        photo = photo.resize((76 * S, 76 * S), Image.LANCZOS)
     seals_w = 320 * S
     seals = seals.resize((seals_w, round(seals.height * seals_w / seals.width)), Image.LANCZOS)
 
@@ -61,11 +63,12 @@ def header(p, out):
     col_x, col_w = split + 8 * S, w - split - 8 * S
     probe = ImageDraw.Draw(Image.new("RGB", (1, 1)))
     name_f = fit(probe, p["name"], "segoeuib.ttf", 16, col_w)
-    title_f = fit(probe, p["title"], "segoeuib.ttf", 12, col_w)
+    title_f = fit(probe, p["title"] or " ", "segoeuib.ttf", 12, col_w)
     # text boxes are taller than the font size (descenders), so measure with textbbox
     name_h = probe.textbbox((0, 0), p["name"], font=name_f)[3]
-    title_h = probe.textbbox((0, 0), p["title"], font=title_f)[3]
-    block_h = photo.height + 6 * S + name_h + 2 * S + title_h
+    title_h = probe.textbbox((0, 0), p["title"], font=title_f)[3] if p["title"] else 0
+    photo_h = photo.height + 6 * S if photo else 0
+    block_h = photo_h + name_h + 2 * S + title_h
 
     top_h = max(logo.height, block_h + 4 * S)
     pad = 12 * S
@@ -75,9 +78,12 @@ def header(p, out):
     canvas.paste(logo, (0, (top_h - logo.height) // 2), logo)
     draw.rectangle([split, 6 * S, split, top_h - 6 * S], fill=LINE)
     y = (top_h - block_h) // 2
-    canvas.paste(photo, (col_x + (col_w - photo.width) // 2, y), photo)
-    y += photo.height + 6 * S
+    if photo:
+        canvas.paste(photo, (col_x + (col_w - photo.width) // 2, y), photo)
+        y += photo.height + 6 * S
     for text, font, color, th in ((p["name"], name_f, NAME, name_h), (p["title"], title_f, TITLE, title_h)):
+        if not text:
+            continue
         tw = draw.textlength(text, font=font)
         draw.text((col_x + (col_w - tw) / 2, y), text, font=font, fill=color)
         y += th + 2 * S
