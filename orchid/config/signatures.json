@@ -1,0 +1,49 @@
+{
+  "company": {
+    "name": "Orchid MoveMex Enterprises®",
+    "accent": "#5B2E91",
+    "website": "https://www.orchidmove.com/",
+    "website_label": "www.orchidmove.com",
+    "address_lines": ["Andalucía 17, Col. Álamos", "03400 Ciudad de México, México"],
+    "address_url": "https://www.google.com/maps/search/Andaluc%C3%ADa+17,+Col.+%C3%81lamos,+Benito+Ju%C3%A1rez,+03400+Ciudad+de+M%C3%A9xico",
+    "logo": {"file": "orchid-logo.png", "width": 200, "height": 53, "alt": "Orchid Move-Mex Enterprises"},
+    "social": [
+      {"icon": "icon-instagram.png", "alt": "Instagram", "url": "https://www.instagram.com/orchidmove"},
+      {"icon": "icon-facebook.png", "alt": "Facebook", "url": "https://www.facebook.com/people/Orchidmove/61566478843980/"},
+      {"icon": "icon-linkedin.png", "alt": "LinkedIn", "url": "https://www.linkedin.com/company/orchidmove"}
+    ],
+    "badges": [
+      {"file": "badge-iamx.png", "width": 132, "height": 40, "alt": "IAMX Validated", "url": "https://iamovers.mobilityex.com/index.html#/search/service-providers/16629?svc=OMME%20Relocation%20SA%20de%20CV&sort=companylegalname%2Casc&range=50&assocs=800&query=q%3D%201"},
+      {"file": "badge-movers.png", "width": 106, "height": 28, "alt": "Movers P.O.E.", "url": null},
+      {"file": "badge-iam.png", "width": 74, "height": 44, "alt": "IAM - International Association of Movers", "url": "https://iamovers.mobilityex.com/index.html#/search/service-providers/16629?svc=OMME%20Relocation%20SA%20de%20CV&sort=companylegalname%2Casc&range=50&assocs=800&query=q%3D%201"}
+    ],
+    "powered_by": {"file": "intuicio-logo.png", "width": 84, "height": 15, "alt": "intuiCIO", "url": "https://intuicioerp.com"},
+    "privacy_notice": {
+      "title": "Aviso de Privacidad / Privacy Notice",
+      "es": "Este mensaje es enviado por una entidad integrante del grupo Orchid MoveMex. El responsable del tratamiento de sus datos personales será la entidad legal que figure como parte contratante en el servicio correspondiente. Cuando el servicio sea prestado por OMME Relocation S.A. de C.V., con domicilio en Andalucía 17, Col. Álamos, Alcaldía Benito Juárez, C.P. 03400, Ciudad de México, el tratamiento de datos personales se realizará conforme a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares. El aviso de privacidad integral puede consultarse en:",
+      "es_link": {"label": "orchidmove.com/politica-de-privacidad-mex", "url": "https://www.orchidmove.com/politica-de-privacidad-mex"},
+      "en": "This message is sent by an entity within the Orchid MoveMex group. The responsible entity for processing personal data will be the contracting legal entity identified in the corresponding service agreement. When services are provided by OMME Relocation S.A. de C.V., personal data will be processed in accordance with the applicable Mexican Federal Data Protection Law. The full privacy notice is available at:",
+      "en_link": {"label": "orchidmove.com/en/privacy-policy", "url": "https://www.orchidmove.com/en/privacy-policy"}
+    }
+  },
+  "people": [
+    {
+      "id": "rodolfo-cerda",
+      "name": "Rodolfo Cerda",
+      "title": "CEO",
+      "email": "rodolfo@orchidmove.com",
+      "mobile": {"label": "Cel. / WhatsApp", "display": "+52 55 6971 8344", "url": "https://api.whatsapp.com/send/?phone=525569718344&text&type=phone_number&app_absent=0"},
+      "phone": {"label": "Tel.", "display": "+52 55 6530 5480", "url": "tel:+525565305480"},
+      "whatsapp_url": "https://api.whatsapp.com/send/?phone=525569718344&text&type=phone_number&app_absent=0"
+    },
+    {
+      "id": "lety-de-los-santos",
+      "name": "Lety de los Santos",
+      "title": "Operations Manager",
+      "email": "lety@orchidmove.com",
+      "mobile": null,
+      "phone": {"label": "Tel.", "display": "+52 55 6530 5480", "url": "tel:+525565305480"},
+      "whatsapp_url": null
+    }
+  ]
+}
