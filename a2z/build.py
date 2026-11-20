@@ -48,12 +48,19 @@ class Renderer:
         b = self.brand
         accent, body, dark = b["accent"], b["text_body"], b["text_dark"]
         link_style = f"color:{body};text-decoration:none;"
+        credential = p.get("credential")
+        title_pad = "0 0 2px 0" if credential else "0 0 6px 0"
         rows = [
             f'<tr><td style="font-family:{FONT};font-size:22px;line-height:26px;font-weight:bold;'
             f'font-style:italic;color:{dark};padding:0 0 4px 0;">{escape(p["name"])}</td></tr>',
-            f'<tr><td style="font-family:{FONT};font-size:13px;line-height:18px;color:{body};padding:0 0 6px 0;">'
+            f'<tr><td style="font-family:{FONT};font-size:13px;line-height:18px;color:{body};padding:{title_pad};">'
             f'{escape(p["title"])} at <strong style="color:{accent};">{escape(b["company"])}</strong></td></tr>',
         ]
+        if credential:
+            rows.append(
+                f'<tr><td style="font-family:{FONT};font-size:12px;line-height:16px;font-weight:bold;'
+                f'font-style:italic;color:{dark};padding:0 0 6px 0;">{escape(credential)}</td></tr>'
+            )
         contact = []
         if p.get("phone_tel"):
             contact.append(
@@ -88,7 +95,7 @@ class Renderer:
 
     def header_row(self, p: dict) -> str:
         b = self.brand
-        logo_left = p.get("logo_position") == "left"
+        logo_left = p.get("logo_position", "left") == "left"
         cells = []
         if p.get("photo"):
             cells.append(f'<td width="{p["photo"]["width"]}" valign="middle" style="padding:0 16px 0 0;">{self.img(p["photo"])}</td>')
@@ -109,8 +116,29 @@ class Renderer:
     def logos_row(self, p: dict) -> str:
         b = self.brand
         logos = self.cfg["logo_rows"][p["logo_row"]]
-        logo_cells = "".join(
-            f'<td valign="middle" style="padding:0 8px 0 0;">{self.img(l)}</td>' for l in logos
+        wrap_after = p.get("logo_wrap_after")  # split the logos into two lines after N items
+        gap = 18 if wrap_after else 8
+
+        cells = [f'<td valign="middle" style="padding:0 {gap}px 0 0;">{self.img(l)}</td>' for l in logos]
+        if p.get("logo_caption"):
+            # Credential text placed as the last item of the logo block, stacked on two lines:
+            # "<lead>|<highlight>", e.g. "FIDI Academy|LiM Graduate".
+            lead, _, highlight = p["logo_caption"].partition("|")
+            soft = "#9E3A8C"
+            cells.append(
+                f'<td valign="middle" align="center" style="font-family:{FONT};font-size:11px;line-height:13px;'
+                f'font-style:italic;font-weight:bold;color:{b["text_body"]};white-space:nowrap;">'
+                f'{escape(lead.strip())}<br><span style="color:{soft};">{escape(highlight.strip())}</span></td>'
+            )
+
+        lines = [cells[:wrap_after], cells[wrap_after:]] if wrap_after else [cells]
+        logo_block = "".join(
+            f'<tr><td style="padding:{"0" if i == 0 else "10px 0 0 0"};">'
+            '<table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr>'
+            + "".join(line)
+            + "</tr></table></td></tr>"
+            for i, line in enumerate(lines)
+            if line
         )
         pb = b["powered_by"]
         pb_img = self.img(pb)
@@ -125,9 +153,9 @@ class Renderer:
         return (
             f'<tr><td style="border-top:1px solid {b["divider"]};padding:12px 0 12px 0;">'
             '<table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation"><tr>'
-            '<td valign="middle"><table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr>'
-            + logo_cells
-            + "</tr></table></td>"
+            '<td valign="middle"><table cellpadding="0" cellspacing="0" border="0" role="presentation">'
+            + logo_block
+            + "</table></td>"
             f'<td width="1" bgcolor="{b["divider"]}" style="width:1px;background-color:{b["divider"]};font-size:0;line-height:0;">&nbsp;</td>'
             f'<td width="{pb["width"]}" valign="middle" align="center" style="padding:0 0 0 12px;">{powered}</td>'
             "</tr></table></td></tr>"

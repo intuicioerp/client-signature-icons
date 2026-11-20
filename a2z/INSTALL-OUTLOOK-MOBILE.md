@@ -19,6 +19,7 @@ If nothing above works on a given phone:
 ```
 Marly Springer
 CEO | A2Z Move Management
+FIDI Academy LiM Graduate
 marlyspringer@a2zmovemgmt.com
 WhatsApp/Cell: +1 305-986-6650
 www.a2zmovemgmt.com

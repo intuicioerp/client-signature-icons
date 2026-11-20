@@ -79,6 +79,16 @@ def header(cfg, p, out):
     pad = 12 * S
     h = top_h + 8 * S + tag_h + pad + 1 * S + pad + row_h[0] + 10 * S + row_h[1]
 
+    # Credential under the badges ("<lead>|<highlight>", e.g. "FIDI Academy|LiM Graduate"). On desktop it is the
+    # last item of the logo block; on the phone it gets its own centred line, there is no room beside the badges.
+    caption = None
+    if p.get("logo_caption"):
+        lead_txt, _, hi_txt = p["logo_caption"].partition("|")
+        cap_f = font("arialbi.ttf", 11)
+        caption = (lead_txt.strip() + " ", hi_txt.strip(), cap_f)
+        cap_h = probe.textbbox((0, 0), caption[0] + caption[1], font=cap_f)[3]
+        h += 10 * S + cap_h + 2 * S
+
     canvas = Image.new("RGB", (w, h), "#FFFFFF")
     draw = ImageDraw.Draw(canvas)
     if lead:
@@ -105,6 +115,12 @@ def header(cfg, p, out):
             canvas.paste(im, (bx, y + (rh - im.height) // 2), im)
             bx += im.width + gap
         y += rh + 10 * S
+    if caption:
+        lead_txt, hi_txt, cap_f = caption
+        lw = draw.textlength(lead_txt, font=cap_f)
+        cx = (w - lw - draw.textlength(hi_txt, font=cap_f)) / 2
+        draw.text((cx, y), lead_txt, font=cap_f, fill=b["text_body"])
+        draw.text((cx + lw, y), hi_txt, font=cap_f, fill="#9E3A8C")   # same soft purple as the desktop caption
     canvas.save(out, optimize=True)
     return h // S
 

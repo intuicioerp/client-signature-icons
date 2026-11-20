@@ -34,3 +34,14 @@ python3 build.py --local
 ## Editing
 
 Change names, titles, emails or legal text in `config/signatures.json`, re-run `build.py`, commit `dist/`.
+If the change touches the header or the badges, also re-run `build_mobile.py` and commit `images/header-<slug>.png`
+and `dist/mobile/`. A change of data also goes to the text-only block in `INSTALL-OUTLOOK-MOBILE.md` and to the
+person's signature in the ERP (user record → Preferences → Signature).
+
+Optional per-person fields:
+
+- `"logo_caption": "<lead>|<highlight>"` — text shown as the last item of the badge block, on two lines
+  (Marly: `FIDI Academy | LiM Graduate`, no logo and no link, as FIDI asked). On the phone it is one centred line
+  under the badges.
+- `"logo_wrap_after": N` — splits the desktop badge block into two lines after N items.
+- `"credential": "..."` — one line of text under the title (not used today).

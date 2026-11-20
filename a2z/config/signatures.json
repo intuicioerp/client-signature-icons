@@ -19,15 +19,15 @@
   },
   "logo_rows": {
     "with_photo": [
-      {"file": "iam-trusted.png", "width": 29, "height": 28, "alt": "IAM Trusted"},
-      {"file": "iamx-validated.png", "width": 64, "height": 22, "alt": "IAMX Validated"},
-      {"file": "ima.png", "width": 30, "height": 22, "alt": "IMA - International Mobility Alliance"},
-      {"file": "fedemac.png", "width": 63, "height": 14, "alt": "FEDEMAC European Movers"},
-      {"file": "gem-network.png", "width": 54, "height": 18, "alt": "GEM Network"},
-      {"file": "nvocc-california.png", "width": 28, "height": 28, "alt": "NVOCC Agent - State of California"},
-      {"file": "reloadvisor.png", "width": 67, "height": 10, "alt": "ReloAdvisor"},
-      {"file": "fem.png", "width": 45, "height": 18, "alt": "Forum for Expatriate Management"},
-      {"file": "movers-poe.png", "width": 47, "height": 18, "alt": "Instant Rate Movers P.O.E"}
+      {"file": "iam-trusted.png", "width": 36, "height": 35, "alt": "IAM Trusted"},
+      {"file": "iamx-validated.png", "width": 61, "height": 21, "alt": "IAMX Validated"},
+      {"file": "ima.png", "width": 42, "height": 31, "alt": "IMA - International Mobility Alliance"},
+      {"file": "fedemac.png", "width": 77, "height": 17, "alt": "FEDEMAC European Movers"},
+      {"file": "gem-network.png", "width": 64, "height": 21, "alt": "GEM Network"},
+      {"file": "nvocc-california.png", "width": 35, "height": 36, "alt": "NVOCC Agent - State of California"},
+      {"file": "reloadvisor.png", "width": 94, "height": 14, "alt": "ReloAdvisor"},
+      {"file": "fem.png", "width": 58, "height": 23, "alt": "Forum for Expatriate Management"},
+      {"file": "movers-poe.png", "width": 58, "height": 22, "alt": "Instant Rate Movers P.O.E"}
     ],
     "default": [
       {"file": "iam.png", "width": 48, "height": 24, "alt": "IAM - International Association of Movers"},
@@ -60,7 +60,9 @@
       "phone_tel": "+13059866650",
       "linkedin_url": "https://www.linkedin.com/in/marlyspringer",
       "logo_position": "left",
-      "logo_row": "with_photo"
+      "logo_row": "with_photo",
+      "logo_caption": "FIDI Academy | LiM Graduate",
+      "logo_wrap_after": 6
     },
     {
       "slug": "ana-torres",
