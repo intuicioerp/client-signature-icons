@@ -124,11 +124,11 @@ class Renderer:
             # Credential text placed as the last item of the logo block, stacked on two lines:
             # "<lead>|<highlight>", e.g. "FIDI Academy|LiM Graduate".
             lead, _, highlight = p["logo_caption"].partition("|")
-            soft = "#9E3A8C"
+            black = "#000000"   # whole caption in black (no purple highlight)
             cells.append(
                 f'<td valign="middle" align="center" style="font-family:{FONT};font-size:11px;line-height:13px;'
-                f'font-style:italic;font-weight:bold;color:{b["text_body"]};white-space:nowrap;">'
-                f'{escape(lead.strip())}<br><span style="color:{soft};">{escape(highlight.strip())}</span></td>'
+                f'font-style:italic;font-weight:bold;color:{black};white-space:nowrap;">'
+                f'{escape(lead.strip())}<br>{escape(highlight.strip())}</td>'
             )
 
         lines = [cells[:wrap_after], cells[wrap_after:]] if wrap_after else [cells]

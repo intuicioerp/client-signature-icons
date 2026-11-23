@@ -119,8 +119,8 @@ def header(cfg, p, out):
         lead_txt, hi_txt, cap_f = caption
         lw = draw.textlength(lead_txt, font=cap_f)
         cx = (w - lw - draw.textlength(hi_txt, font=cap_f)) / 2
-        draw.text((cx, y), lead_txt, font=cap_f, fill=b["text_body"])
-        draw.text((cx + lw, y), hi_txt, font=cap_f, fill="#9E3A8C")   # same soft purple as the desktop caption
+        draw.text((cx, y), lead_txt, font=cap_f, fill="#000000")
+        draw.text((cx + lw, y), hi_txt, font=cap_f, fill="#000000")   # all black, same as the desktop caption
     canvas.save(out, optimize=True)
     return h // S
 
